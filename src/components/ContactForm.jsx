@@ -16,26 +16,22 @@ const ContactForm = () => {
   const validate = () => {
     const newErrors = {};
     
-    // Full Name validation
     if (!formData.fullName.trim()) {
       newErrors.fullName = 'Full name is required';
     }
     
-    // Email validation
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
     
-    // Phone Number validation
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = 'Phone number is required';
     } else if (!/^[\d\s\+\-\(\)]{10,}$/.test(formData.phoneNumber)) {
       newErrors.phoneNumber = 'Please enter a valid phone number (minimum 10 digits)';
     }
     
-    // Message validation
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
     } else if (formData.message.length < 10) {
@@ -52,45 +48,40 @@ const ContactForm = () => {
       [name]: value
     }));
     
-    // Update character count for message field
     if (name === 'message') {
       setCharCount(value.length);
     }
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  
-  const validationErrors = validate();
-  setErrors(validationErrors);
-  
-  if (Object.keys(validationErrors).length === 0) {
-    try {
-      // Log the data being submitted (for testing)
-      console.log('Form submitted successfully!', {
-        fullName: formData.fullName,
-        email: formData.email,
-        phoneNumber: formData.phoneNumber,
-        message: formData.message
-      });
-      
-      // Simulate API call - replace with real endpoint later
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Show success message
-      setSubmitted(true);
-      setFormData({ fullName: '', email: '', phoneNumber: '', message: '' });
-      setCharCount(0);
-      
-      // Hide success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000);
-      
-    } catch (error) {
-      console.error('Submission error:', error);
-      alert('Something went wrong. Please try again.');
+    e.preventDefault();
+    
+    const validationErrors = validate();
+    setErrors(validationErrors);
+    
+    if (Object.keys(validationErrors).length === 0) {
+      try {
+        console.log('Form submitted:', {
+          fullName: formData.fullName,
+          email: formData.email,
+          phoneNumber: formData.phoneNumber,
+          message: formData.message
+        });
+        
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        setSubmitted(true);
+        setFormData({ fullName: '', email: '', phoneNumber: '', message: '' });
+        setCharCount(0);
+        
+        setTimeout(() => setSubmitted(false), 5000);
+        
+      } catch (error) {
+        console.error('Submission error:', error);
+        alert('Something went wrong. Please try again.');
+      }
     }
-  }
-};
+  };
 
   return (
     <section id="contact" className="contact-section">
