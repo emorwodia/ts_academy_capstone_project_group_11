@@ -1,6 +1,6 @@
-/* ======================================== */
+
 /* DESKTOP VIEW - TWO COLUMN LAYOUT         */
-/* ======================================== */
+
 
 /* Base styles that apply to all screens */
 .contact-section {
@@ -161,10 +161,9 @@
   }
 }
 
-/* ======================================== */
 /* DESKTOP ONLY (screens wider than 768px) */
 /* TWO COLUMN LAYOUT - BUTTON UNDER PHONE NUMBER */
-/* ======================================== */
+
 
 @media (min-width: 769px) {
   /* Form becomes 2 columns on desktop */
@@ -182,10 +181,10 @@
   }
 }
 
-/* ======================================== */
+
 /* MOBILE VIEW (max-width: 768px)           */
 /* STACKED SINGLE COLUMN                    */
-/* ======================================== */
+
 
 @media (max-width: 768px) {
   .contact-section {
