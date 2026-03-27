@@ -1,6 +1,5 @@
 import React from 'react';
-import './Footer.css';
-const Footer = () => {
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -14,7 +13,7 @@ const Footer = () => {
             API integration, and responsive design.
           </p>
           <div className="team-members">
-            <p><strong>Team Members:</strong> Amaka, Ifeoma, and [Your Name]</p>
+            <p><strong>Team Members:</strong> Habeeb A., Lawrence A.D., Joshua, ⁠Temiloluwa B, Chukwudi F. M., Oluwatosin and Oluwatosin R.O</p>
           </div>
         </div>
 
@@ -59,13 +58,12 @@ const Footer = () => {
           <p>
             Group Name: <a href="https://github.com/SgtSlaughter1/ts_academy_capstone_project_group_11" target="_blank" rel="noopener noreferrer">TS Academy Capstone Group 11</a>
           </p>
-          <p className="group-members">Created by: Amaka, Ifeoma, and [Your Name]</p>
+          <p className="group-members">Created by: Habeeb A., Lawrence A.D., Joshua, ⁠Temiloluwa B, Chukwudi F. M., Oluwatosin and Oluwatosin R.O</p>
         </div>
       </div>
     </footer>
   );
 };
   
-};
 
 export default Footer;
